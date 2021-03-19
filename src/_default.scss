@@ -1,0 +1,92 @@
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;600;700;800;900&display=swap");
+@import "config";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background: transparent;
+  object-fit: cover;
+  object-position: center;
+  font-family: $sans-serif;
+  line-height: $b-line-height;
+  font-size: 0.96rem;
+  text-decoration: none;
+  list-style: none;
+  outline: none;
+}
+
+body {
+  color: $text-color;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Nunito";
+  line-height: $h-line-height;
+}
+
+h1 {
+  font-size: 90 * 0.0625rem;
+}
+h2 {
+  font-size: 67 * 0.0625rem;
+}
+h3 {
+  font-size: 54 * 0.0625rem;
+}
+h4 {
+  font-size: 38 * 0.0625rem;
+}
+h5 {
+  font-size: 27 * 0.0625rem;
+}
+h6 {
+  font-size: 22 * 0.0625rem;
+}
+.body1 {
+  font-size: 18 * 0.0625rem;
+}
+.body2 {
+  font-size: 16 * 0.0625rem;
+}
+.subtitle1 {
+  font-size: 18 * 0.0625rem;
+}
+.subtitle2 {
+  font-size: 16 * 0.0625rem;
+}
+.button {
+  font-size: 16 * 0.0625rem;
+}
+.overline {
+  font-size: 11 * 0.0625rem;
+}
+.caption {
+  font-size: 13 * 0.0625rem;
+}
+
+:root {
+  color-scheme: light dark;
+}
+
+@media (prefers-color-scheme: light) {
+  :root,
+  .light-theme {
+    --text-color: #{$dark-text-color};
+    --text-color-rgb: #{$dark-text-color-rgb};
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  :root,
+  .dark-theme {
+    --text-color: #{$light-text-color};
+    --text-color-rgb: #{$light-text-color-rgb};
+  }
+}

@@ -1,0 +1,29 @@
+.todo-body {
+    max-width: 50rem;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    
+    & > h2 {
+        margin-bottom: 1em;
+        flex-shrink: 0;
+    }
+    
+    & > p {
+        font-size: 125%;
+    }
+
+    hr {
+        margin: 2rem 0;
+    }
+
+    &-empty {
+    color: $disabled-text-color;
+    max-width: 40rem;
+    text-align: center;
+        display: flex;
+        flex-direction: column;
+        padding: $desktop-padding;
+        justify-content: center;
+    }
+}

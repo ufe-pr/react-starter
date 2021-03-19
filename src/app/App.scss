@@ -1,0 +1,33 @@
+@import "default";
+
+.app {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: 1fr;
+  column-gap: 2rem;
+  grid-auto-rows: 100%;
+  padding: $desktop-padding;
+
+  & > * {
+    height: 100%;
+  }
+}
+@import 'todo';
+
+$sidebar-span: 4;
+
+.sidebar {
+  grid-column: span $sidebar-span;
+  border-radius: $large-radius;
+  border: 2px solid #cccccc;
+  padding: $large-radius;
+}
+
+.todo-body-container {
+  grid-column-end: -1;
+  grid-column-start: $sidebar-span + 1;
+}
+
+@import 'sidebar';
+@import 'body';

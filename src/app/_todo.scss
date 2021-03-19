@@ -1,0 +1,79 @@
+
+.todo-list-item {
+    --back: #ffffff;
+    background: var(--back);
+    display: flex;
+    padding: $small-padding / 2 $small-padding;
+    align-items: center;
+    transition: $transition-time;
+
+    &.completed {
+      text-decoration: line-through;
+    }
+  
+    &:hover {
+      border-radius: $moderate-radius;
+      border-bottom: none;
+      cursor: pointer;
+      --back: #dfe2e9;
+    }
+  
+    &-checkbox {
+      width: 1.3rem;
+      flex-shrink: 0;
+      height: 1.3rem;
+      border-radius: 50%;
+      vertical-align: middle;
+      border: 2px solid rgba($text-color-rgb, 0.5);
+      -webkit-appearance: none;
+      outline: none;
+      cursor: pointer;
+      margin-right: $small-padding;
+      transition: $transition-time;
+      position: relative;
+
+      &::after {
+        $ext: -10px;
+        position: absolute;
+        content: '';
+        border-radius: 100%;
+        top: $ext;
+        bottom: $ext;
+        right: $ext;
+        left: $ext;
+        transition: $transition-time;
+      }
+  
+      &:hover {
+        // background: #cccccc32;
+
+        &::after {
+          background: #9393eb57;
+        }
+      }
+  
+      &:checked,
+      &.checked {
+        background: #9393eb;
+        border: none;
+      }
+    }
+  
+    &-text-container {
+      flex-grow: 1;
+    }
+    &-text-content {
+      margin-bottom: 5 * 0.0625rem;
+      $max-lines: 2;
+      max-height: #{$h-line-height * $max-lines}em;
+      overflow: hidden;
+
+    }
+    &-note-content {
+      $max-lines: 3;
+      max-height: #{$b-line-height * $max-lines}em;
+      overflow: hidden;
+    }
+    
+  }
+  
