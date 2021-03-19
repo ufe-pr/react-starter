@@ -19,6 +19,7 @@
 
 body {
   color: $text-color;
+  background-color: var(--background);
 }
 
 h1,
@@ -80,6 +81,8 @@ h6 {
   .light-theme {
     --text-color: #{$dark-text-color};
     --text-color-rgb: #{$dark-text-color-rgb};
+    --background: #{$light-background};
+    --hover-background: #{$light-hover-background};
   }
 }
 
@@ -88,5 +91,7 @@ h6 {
   .dark-theme {
     --text-color: #{$light-text-color};
     --text-color-rgb: #{$light-text-color-rgb};
+    --background: #{$dark-background};
+    --hover-background: #{$dark-hover-background};
   }
 }

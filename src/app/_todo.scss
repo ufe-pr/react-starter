@@ -1,6 +1,6 @@
 
 .todo-list-item {
-    --back: #ffffff;
+    --back: var(--background);
     background: var(--back);
     display: flex;
     padding: $small-padding / 2 $small-padding;
@@ -15,7 +15,7 @@
       border-radius: $moderate-radius;
       border-bottom: none;
       cursor: pointer;
-      --back: #dfe2e9;
+      --back: var(--hover-background);
     }
   
     &-checkbox {
