@@ -2,7 +2,9 @@
 
 .app {
   display: grid;
-  height: 100%;
+  height: 100vh;
+  overflow-y: auto;
+  overflow-x: hidden;
   grid-template-columns: repeat(12, 1fr);
   grid-template-rows: 1fr;
   column-gap: 2rem;
@@ -16,13 +18,6 @@
 @import 'todo';
 
 $sidebar-span: 4;
-
-.sidebar {
-  grid-column: span $sidebar-span;
-  border-radius: $large-radius;
-  border: 2px solid #cccccc;
-  padding: $large-radius;
-}
 
 .todo-body-container {
   grid-column-end: -1;

@@ -1,5 +1,11 @@
 {
     "scss.lint.validProperties": [
         "color-scheme"
+    ],
+    "cSpell.words": [
+        "todos"
+    ],
+    "cSpell.ignoreWords": [
+        "contenteditable"
     ]
 }

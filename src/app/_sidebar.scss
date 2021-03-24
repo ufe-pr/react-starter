@@ -1,6 +1,47 @@
+.sidebar-container {
+  grid-column: span $sidebar-span;
+  border-radius: $large-radius;
+  border: 2px solid #cccccc;
+  padding: $large-radius;
+}
+
 .sidebar {
-    h1 {
-        margin-bottom: .2em;
-        text-align: center;
+  position: relative;
+  height: 100%;
+  width: 100%;
+  overflow-y: scroll;
+
+  // Scrollbar Hiding
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+  &-container {
+    position: sticky;
+    top: 0;
+    overflow: hidden;
+    height: calc(100vh - #{2 * $desktop-padding});
+
+    .add-todo-button {
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+      height: 4rem;
+      width: 4rem;
+      line-height: 1;
+      font-size: 2rem;
+      color: var(--background);
+      border: none;
+      text-align: center;
+      display: block;
+      border-radius: 100%;
+      background: var(--text-color);
+      cursor: pointer;
     }
+  }
+  h1 {
+    margin-bottom: 0.2em;
+    text-align: center;
+  }
 }

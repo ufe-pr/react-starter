@@ -1,22 +1,22 @@
-import React from 'react';
-import Todo from '../todo/Todo';
+import React, { useContext } from "react";
+import Todo from "../todo/Todo";
+import { TodoContext } from "app/contexts/TodoContext";
+import AddTodoButton from "../addTodoButton/AddTodoButton";
 
-class Sidebar extends React.Component {
-
-    render() {
-        const final = [];
-        for (const todo in this.props.todos) {
-            final.push(<Todo onClick={this.props.selectTodo} className="todo-list-item" key={todo} id={todo} todo={this.props.todos[todo]} onStatusChange={this.props.onTodoStatusChange} />)
-        }
-        return (
-            <div className={this.props.className}>
-                <h1>Todos</h1>
-                <div className="todos">
-                    {final}
-                </div>
-            </div>
-        );
-    }
+export default function Sidebar({ className }) {
+  const todoContext = useContext(TodoContext);
+  const todos = todoContext.state.todos;
+  const final = [];
+  for (const todo in todos) {
+    final.push(<Todo className="todo-list-item" key={todo} id={todo} />);
+  }
+  return (
+    <div className={className + "-container"}>
+      <div className={className}>
+        <h1>Todos</h1>
+        <div className="todos">{final}</div>
+      </div>
+      <AddTodoButton className="add-todo-button" />
+    </div>
+  );
 }
-
-export default Sidebar;

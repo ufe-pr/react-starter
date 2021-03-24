@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { useContext } from "react";
+import { TodoContext } from "app/contexts/TodoContext";
 
-class AddTodoButton extends React.Component {
-    render() {
-        return (
-            <button className={this.props.className}>
-                Add new +
-            </button>
-        );
-    }
+export default function AddTodoButton({ className }) {
+  const todoContext = useContext(TodoContext);
+  function addTodo() {
+    const id = todoContext.createTodo({
+      content: "Replace with your title",
+      completed: false,
+      note: "Add the contents of your note here.",
+    });
+    todoContext.selectTodo(id);
+  }
+  return (
+    <button className={className} onClick={addTodo}>
+      +
+    </button>
+  );
 }
-
-export default AddTodoButton;
